@@ -1,0 +1,27 @@
+{
+  "name": "db-migrate",
+  "version": "0.0.1",
+  "description": "Database migration framework for node.js",
+  "scripts": {
+    "lint": "DEBUG=eslint:cli,eslint:file-enumerator,eslint:cli-engine,eslint:source-code-fixer eslint . --fix"
+  },
+  "bin": {
+    "db-migrate": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iphios/db-migrate.git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "^9.1.0",
+    "inquirer": "^8.2.2",
+    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#45cde1d0adbced6a15adf7c02e69b16b61494c7d",
+    "ora": "5.4.1",
+    "yaml": "^1.10.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0"
+  }
+}
