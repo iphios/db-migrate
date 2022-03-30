@@ -35,7 +35,7 @@ const defaultValidateFun = function(validationName) {
     try {
       jsonschema.validate(validationName, value);
       return true;
-    } catch(err) {
+    } catch (err) {
       return err.message;
     }
   };
@@ -45,7 +45,7 @@ const getConfigFilePath = function(name) {
   return path.join(folderPath, `${name}.yml`);
 };
 
-const questions = [{
+const addQuestions = [{
   type: 'input',
   name: 'name',
   message: 'Config name',
@@ -74,19 +74,17 @@ const questions = [{
 }];
 
 const addAction = async function() {
-  const answers = await inquirer.prompt(questions);
-  const filePath = getConfigFilePath(answers.name);
+  const {
+    name
+  } = await inquirer.prompt(addQuestions[0]);
+  const filePath = getConfigFilePath(name);
   if (fs.existsSync(filePath)) {
     process.stdout.write(`${chalk.red('error')} file "${filePath}" already exist\n`);
     return;
   }
 
-  const data = YAML.stringify({
-    host: answers.host,
-    user: answers.user,
-    password: answers.password,
-    port: answers.port
-  });
+  const answers = await inquirer.prompt(addQuestions.splice(1));
+  const data = YAML.stringify(answers);
   fs.writeFileSync(filePath, data, {
     encoding: 'utf8'
   });
@@ -94,13 +92,17 @@ const addAction = async function() {
 };
 
 const removeAction = async function() {
-  const answers = await inquirer.prompt(questions[0]);
-  const filePath = getConfigFilePath(answers.name);
-  if (!fs.existsSync(filePath)) {
-    process.stdout.write(`${chalk.red('error')} file "${filePath}" doesn't exist\n`);
-    return;
-  }
-
+  const choices = fs.readdirSync(folderPath).map(each => each.split('.')[0]);
+  console.log(choices);
+  const {
+    name
+  } = await inquirer.prompt({
+    type: 'list',
+    name: 'name',
+    message: 'Choose which config to remove',
+    choices: choices
+  });
+  const filePath = getConfigFilePath(name);
   fs.unlinkSync(filePath);
   process.stdout.write(`${chalk.green('success')} file "${filePath}" removed\n`);
 };
