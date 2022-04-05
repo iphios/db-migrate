@@ -16,8 +16,9 @@
   "dependencies": {
     "chalk": "4.1.2",
     "commander": "^9.1.0",
-    "inquirer": "^8.2.2",
-    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#45cde1d0adbced6a15adf7c02e69b16b61494c7d",
+    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#3933d9f9a7b658be9a0786b89641530ec4ec6990",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.3",
     "ora": "5.4.1",
     "yaml": "^1.10.2"
   },
