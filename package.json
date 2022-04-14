@@ -14,9 +14,10 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "chalk": "4.1.2",
     "commander": "^9.1.0",
-    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#3933d9f9a7b658be9a0786b89641530ec4ec6990",
+    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#96f2994fd0fc23c4b35b71e835de52c21efd9e9c",
     "moment": "^2.29.1",
     "mysql2": "^2.3.3",
     "ora": "5.4.1",
