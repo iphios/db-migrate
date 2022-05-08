@@ -1,6 +1,7 @@
 {
   "name": "db-migrate",
   "version": "0.0.1",
+  "private": true,
   "description": "Database migration framework for node.js",
   "scripts": {
     "lint": "DEBUG=eslint:cli,eslint:file-enumerator,eslint:cli-engine,eslint:source-code-fixer eslint . --fix"
