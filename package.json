@@ -18,7 +18,7 @@
     "bluebird": "^3.7.2",
     "chalk": "4.1.2",
     "commander": "^9.1.0",
-    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#726e25ce6dffba000f55a8bcd4736c2267be5f7d",
+    "json-schema": "git+ssh://git@github.com:iphios/json-schema.git#4574158dbdb32c0d92860070be39824f25d83e2b",
     "moment": "^2.29.1",
     "mysql2": "^2.3.3",
     "ora": "5.4.1",
